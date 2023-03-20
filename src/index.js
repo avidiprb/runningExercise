@@ -26,7 +26,21 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
-]);
+  {
+    path: "/repetitionexercise",
+    element: <RepetitionExercise />,
+  },
+  {
+    path: "/timer",
+    element: <DurationExercise/>,
+  },
+  {
+    path: "/lap",
+    element: <RunningExercise />,
+  }
+], {basename: "/runningExercise"}
+
+);
 
 ReactDOM.render(
   <React.StrictMode>
