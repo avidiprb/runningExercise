@@ -14,20 +14,32 @@ import {
   RunningExercise
 } from "./components/RunningExercise";
 import {
+  createBrowserRouter,
   BrowserRouter,
+  RouterProvider,
   Routes,
   Route
 } from "react-router-dom";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+]);
+
 ReactDOM.render(
-  <BrowserRouter>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
+  /*<BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/repetitionexercise" element={<RepetitionExercise />}/>
       <Route path="/timer" element={<DurationExercise />}/>
       <Route path="/lap" element={<RunningExercise />}/>
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>,*/
   document.getElementById("root")
 );
 
